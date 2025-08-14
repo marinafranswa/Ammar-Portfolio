@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
-import heroImage from "../assets/asset4.png"; // Make sure filename has no spaces or @
-
+import heroImage from "../assets/asset4.png"; 
+//hello this is testing push
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -53,6 +53,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+
       {/* Background Carousel */}
       <div className="absolute inset-0">
         {projectReels.map((project, index) => (
