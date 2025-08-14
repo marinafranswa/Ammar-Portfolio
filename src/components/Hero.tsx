@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
-import heroImage from "../assets/asset4.png"; 
+import heroImage from '../assets/Asset4.png';
 //hello this is testing push
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
