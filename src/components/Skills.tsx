@@ -102,7 +102,7 @@ const Skills = () => {
 
               {/* Hover Effect */}
               <div className="project-overlay">
-                <div className="w-12 h-12 border-2 border-primary rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 border-2 border-primary rounded-full flex items-center justify-center m-4">
                   <div className="text-primary">→</div>
                 </div>
               </div>
