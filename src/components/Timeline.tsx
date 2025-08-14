@@ -86,7 +86,7 @@ const Timeline = () => {
                     }`}
                   >
                     {milestone.current && (
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                      <div className="absolute -top-2 -right-2 w-10 h-6 bg-primary rounded-full flex items-center justify-center">
                         <span className="text-xs font-bold text-primary-foreground">Now</span>
                       </div>
                     )}

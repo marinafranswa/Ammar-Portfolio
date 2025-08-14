@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import heroImage from "../assets/asset4.png"; // Make sure filename has no spaces or @
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,31 +11,31 @@ const Hero = () => {
       title: "Art Vision Agency",
       subtitle: "Creative & Media Agency Branding",
       image: "/api/placeholder/1200/800",
-      type: "Branding"
+      type: "Branding",
     },
     {
       title: "Qayyem Brand Identity",
       subtitle: "Children's Brand Design",
       image: "/api/placeholder/1200/800",
-      type: "Identity"
+      type: "Identity",
     },
     {
       title: "3am Ibrahim",
       subtitle: "AI-Enhanced BBQ Brand",
       image: "/api/placeholder/1200/800",
-      type: "AI Creative"
+      type: "AI Creative",
     },
     {
       title: "Storia Campaign",
       subtitle: "GCC Market Strategy",
       image: "/api/placeholder/1200/800",
-      type: "Campaign"
-    }
+      type: "Campaign",
+    },
   ];
 
   useEffect(() => {
     if (!isPlaying) return;
-    
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % projectReels.length);
     }, 4000);
@@ -61,7 +62,7 @@ const Hero = () => {
               index === currentSlide ? "opacity-20" : "opacity-0"
             }`}
           >
-            <div 
+            <div
               className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url(${project.image})` }}
             />
@@ -71,46 +72,62 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 mt-16">
         {/* Badge */}
-        <div className="inline-flex items-center bg-card/80 backdrop-blur-sm rounded-full px-4 py-2 mt-16 mb-8 border border-border">
-          <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse-glow" />
-          <span className="text-sm font-medium text-muted-foreground">Available for Projects</span>
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex items-center bg-card/80 backdrop-blur-sm rounded-full px-4 py-2 border border-border">
+            <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse-glow" />
+            <span className="text-sm font-medium text-muted-foreground">Available for Projects</span>
+          </div>
         </div>
 
-        {/* Main Headline */}
-        <h1 className="text-display-xl md:text-[5rem] lg:text-[6rem] font-bold mb-6 leading-[0.9]">
-          <span className="block text-foreground">NOT JUST</span>
-          <span className="block text-primary">ANOTHER</span>
-          <span className="block text-foreground">DESIGNER</span>
-        </h1>
 
-        {/* Subheadline */}
-        <p className="text-heading-md text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-          Art Director, Brand Designer & AI Creative Strategist crafting 
-          <span className="text-primary font-semibold"> cinematic brand experiences</span> that 
-          connect emotion with strategy.
-        </p>
+        {/* Two-column layout */}
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          {/* Left Column - Text */}
+          <div className="flex-1 text-center md:text-left">
+            <h1 className="text-display-xl md:text-[5rem] lg:text-[6rem] font-bold mb-6 leading-[0.9]">
+              <span className="block text-foreground">NOT JUST</span>
+              <span className="block text-primary">ANOTHER</span>
+              <span className="block text-foreground">DESIGNER</span>
+            </h1>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <button 
-            className="btn-hero group flex items-center"
-            onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            View My Work
-            <div className="ml-2 group-hover:translate-x-1 transition-transform duration-300 inline-block">→</div>
-          </button>
-          <button 
-            className="btn-ghost"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Get in Touch
-          </button>
+            <p className="text-heading-md text-muted-foreground mb-8 max-w-2xl leading-relaxed">
+              Art Director, Brand Designer & AI Creative Strategist crafting
+              <span className="text-primary font-semibold"> cinematic brand experiences</span> that
+              connect emotion with strategy.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center md:items-start gap-4 mb-12">
+              <button
+                className="btn-hero group flex items-center"
+                onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                View My Work
+                <div className="ml-2 group-hover:translate-x-1 transition-transform duration-300 inline-block">→</div>
+              </button>
+              <button
+                className="btn-ghost"
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                Get in Touch
+              </button>
+            </div>
+          </div>
+
+          {/* Right Column - Image */}
+          <div className="flex-1 flex justify-center">
+            <img
+              src={heroImage}
+              alt="Hero visual"
+              className="max-w-full h-auto rounded-xl shadow-lg"
+            />
+          </div>
         </div>
 
         {/* Current Project Info */}
-        <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-6 border border-border max-w-md mx-auto">
+        <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-6 border border-border max-w-md mx-auto mt-12">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-medium text-secondary bg-secondary/20 px-2 py-1 rounded-md">
               {projectReels[currentSlide].type}
@@ -122,12 +139,8 @@ const Hero = () => {
               <Play size={16} className={isPlaying ? "opacity-50" : "opacity-100"} />
             </button>
           </div>
-          <h3 className="font-semibold text-foreground mb-1">
-            {projectReels[currentSlide].title}
-          </h3>
-          <p className="text-sm text-muted-foreground">
-            {projectReels[currentSlide].subtitle}
-          </p>
+          <h3 className="font-semibold text-foreground mb-1">{projectReels[currentSlide].title}</h3>
+          <p className="text-sm text-muted-foreground">{projectReels[currentSlide].subtitle}</p>
         </div>
       </div>
 
@@ -139,7 +152,7 @@ const Hero = () => {
         >
           <ChevronLeft size={16} />
         </button>
-        
+
         {/* Progress Indicators */}
         <div className="flex gap-2">
           {projectReels.map((_, index) => (
