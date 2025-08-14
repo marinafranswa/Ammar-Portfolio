@@ -73,7 +73,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         {/* Badge */}
-        <div className="inline-flex items-center bg-card/80 backdrop-blur-sm rounded-full px-4 py-2 mb-8 border border-border">
+        <div className="inline-flex items-center bg-card/80 backdrop-blur-sm rounded-full px-4 py-2 mt-16 mb-8 border border-border">
           <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse-glow" />
           <span className="text-sm font-medium text-muted-foreground">Available for Projects</span>
         </div>
@@ -95,11 +95,11 @@ const Hero = () => {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <button 
-            className="btn-hero group"
+            className="btn-hero group flex items-center"
             onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
           >
             View My Work
-            <div className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</div>
+            <div className="ml-2 group-hover:translate-x-1 transition-transform duration-300 inline-block">→</div>
           </button>
           <button 
             className="btn-ghost"
