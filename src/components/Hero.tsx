@@ -18,11 +18,11 @@ import Subway2 from "../assets/subway c v3.jpg";
 
 const Hero = () => {
   const posts = [
-    { id: 1, image: Glossier1, caption: "Launching our new campaign 🚀" },
-    { id: 2, image: Nothing1, caption: "Client spotlight ✨" },
-    { id: 3, image: Subway1, caption: "Creative process in action 🎨" },
-    { id: 4, image: Nothing2, caption: "Client spotlight ✨" },
-    { id: 5, image: Glossier2, caption: "Client spotlight ✨" },
+    { id: 1, image: Glossier2, caption: "Client spotlight ✨" },
+    { id: 2, image: Glossier1, caption: "Launching our new campaign 🚀" },
+    { id: 3, image: Nothing2, caption: "Client spotlight ✨" },
+    { id: 4, image: Nothing1, caption: "Client spotlight ✨" },
+    { id: 5, image: Subway1, caption: "Creative process in action 🎨" },
     { id: 6, image: Subway2, caption: "Client spotlight ✨" },
   ];
 
